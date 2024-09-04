@@ -20,7 +20,7 @@ jobs :
       - name : 'copy'
         uses : appleboy/scp-action@master
         with :
-          host : ${{ secrets.EC2_HOST }}
+          host : ${{ secrets.EC_HOST }}
           username : ${{ secrets.EC2_USER }}
           key : ${{ secrets.EC2_SSH_KEY }}
           source : "app.js, package.json"
@@ -29,7 +29,7 @@ jobs :
       - name : 'npm install'
         uses : appleboy/ssh-action@master
         with :
-          host : ${{ secrets.EC2_HOST }}
+          host : ${{ secrets.EC_HOST }}
           username : ${{ secrets.EC2_USER }}
           key : ${{ secrets.EC2_SSH_KEY }}          
           script : |
