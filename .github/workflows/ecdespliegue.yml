@@ -33,9 +33,6 @@ jobs :
           username : ${{ secrets.EC2_USER }}
           key : ${{ secrets.EC2_SSH_KEY }}          
           script : |
-            curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            sudo apt-get install -y nodejs
-            sudo npm install -g pm2
             cd /home/ubuntu/app
             npm install
             pm2 restart all || pm2 start app.js --name "awsexpress" --watch
