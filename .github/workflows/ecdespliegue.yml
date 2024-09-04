@@ -25,6 +25,7 @@ jobs :
           key : ${{ secrets.EC2_SSH_KEY }}
           source : "app.js, package.json"
           target : "/home/ubuntu/app"
+          verbose: true
       - name : 'npm install'
         uses : appleboy/ssh-action@master
         with :
